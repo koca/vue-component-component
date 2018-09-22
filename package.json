@@ -6,6 +6,7 @@
     "build": "vue-cli-service build --target lib --name VueComponent src/components/Component.js && rimraf dist/demo.html",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
+    "test:unit:cov": "npm run lint && npm run test:unit -- --coverage",
     "test:unit:watch": "vue-cli-service test:unit --watch"
   },
   "unpkg": "dist/VueComponent.umd.min.js",
