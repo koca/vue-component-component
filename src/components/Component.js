@@ -59,10 +59,10 @@ export default {
     });
   },
   methods: {
-    setState(nextState) {
-      Object.keys(nextState).forEach(key => {
-        this.$set(this.$data, key, nextState[key]);
-      });
+    setState(newState) {
+      for (const key in newState) {
+        this[key] = newState[key];
+      }
     },
     getArgs() {
       return {
