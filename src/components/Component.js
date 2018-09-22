@@ -1,4 +1,3 @@
-<script>
 const hooks = [
   "beforeMount",
   "mounted",
@@ -79,4 +78,3 @@ export default {
     });
   }
 };
-</script>
