@@ -1,26 +1,122 @@
 # vue-component-component
 
-## Project setup
-```
-yarn install
+<p align="center">
+
+![npm bundle size (minified + gzip)](https://img.shields.io/npm/v/vue-component-component.svg)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/koca/vue-component-component)
+[![CircleCI branch](https://circleci.com/gh/egoist/bili/tree/master.svg?style=shield)](https://circleci.com/gh/koca/vue-component-component/tree/master)
+![Codecov](https://img.shields.io/codecov/c/github/koca/vue-component-component.svg)
+
+</p>
+
+Vue version of [@Reach/component-component](https://github.com/reach/reach-ui/). 
+
+> A dynamic version of Vue.Component, a component component if you will. Useful for inline lifecycles and state. It's also incredibly composable.
+
+![Screenshot of Converty](media/screenshot.jpg)
+
+## Example
+
+A Todo App:
+
+```html
+<vue-component :initial-state="{ newTodo: 'work', items:[]}">
+  <div slot-scope="{ state }">
+    What to do?:
+    <input type="text" ref="inp" v-model="state.newTodo">
+    <button
+      @click="()=>{
+        state.items.push(state.newTodo)
+        state.newTodo = '';
+        $refs.inp.focus();
+      }"
+    >Add</button>
+    <br>
+    <ul>
+      <li :key="item" v-for="item in state.items">{{item}}</li>
+    </ul>
+  </div>
+</vue-component>
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
+More Examples on [Codesandbox](https://codesandbox.io/s/01r8wko0v0).
+
+## Install
+
+```sh
+npm install vue-component-component
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
+or
+
+```sh
+yarn add vue-component-component
 ```
 
-### Lints and fixes files
-```
-yarn run lint
+## Usage
+
+Register the component locally and use it (recommended)
+
+```js
+import Component from "vue-component-component";
+export default {
+  components: {
+    // ⚠️ `<component>` tag is reserved by vue
+    "vue-component": Component
+  }
+};
 ```
 
-### Run your unit tests
+Or register the component globally in `main.js`
+
+```js
+import Component from "vue-component-component";
+Vue.component("vue-component", Component);
 ```
-yarn run test:unit
+
+Browser usage:
+
+```html
+<!-- vue-component-component JavaScript -->
+<script src="https://unpkg.com/vue-component-component"></script>
+
+<!-- use -->
+<script>
+Vue.component('vue-component', VueComponent)
+new Vue({
+    el: '#app'
+})
+</script>
 ```
+
+## API
+TODO.
+
+All the life cycle hooks and `slot-scope` gets `state` and `setState`.
+
+## Props
+
+| Name                       | Type       | Default | Description                                                                                                  |
+| -------------------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------ |
+| initialState               | `object`   | `{}`    | initial state aka `data: ()=> ({})`                                                                          |
+| created                    | `Function` | -       | Called when the component is created.                                                                        |
+| mounted                    | `Function` | -       | Called when the component is mounted.                                                                        |
+| All other Life Cycle Hooks | `Function` | -       | "beforeMount", "mounted", "beforeUpdate", "updated", "activated", "deactivated", "beforeDestroy","destroyed" |
+
+
+
+## About
+
+Inspired by [@Reach/component-component](https://github.com/reach/reach-ui/).
+Thanks [Ryan](https://twitter.com/ryanflorence) 👍
+
+# Todos
+
+- Refs?
+
+## Author
+
+**vue-component-component** © [koca](https://github.com/koca), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by koca with help from contributors ([list](https://github.com/koca/vue-component-component/contributors)).
+
+> [mesutkoca.com](https://mesutkoca.com) · GitHub [@koca](https://github.com/koca) · Twitter [@imesutkoca](https://twitter.com/imesutkoca)
