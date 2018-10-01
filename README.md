@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![npm bundle size (minified + gzip)](https://img.shields.io/npm/v/vue-component-component.svg)
+![version](https://img.shields.io/npm/v/vue-component-component.svg)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/koca/vue-component-component)
 [![CircleCI branch](https://circleci.com/gh/egoist/bili/tree/master.svg?style=shield)](https://circleci.com/gh/koca/vue-component-component/tree/master)
 ![Codecov](https://img.shields.io/codecov/c/github/koca/vue-component-component.svg)
