@@ -89,11 +89,6 @@ new Vue({
 </script>
 ```
 
-## API
-TODO.
-
-All the life cycle hooks and `slot-scope` gets `state` and `setState`.
-
 ## Props
 
 | Name                       | Type       | Default | Description                                                                                                  |
@@ -104,13 +99,28 @@ All the life cycle hooks and `slot-scope` gets `state` and `setState`.
 | All other Life Cycle Hooks | `Function` | -       | "beforeMount", "mounted", "beforeUpdate", "updated", "activated", "deactivated", "beforeDestroy","destroyed" |
 
 
+## Scoped Slots
+
+| **Name**  | **Description**                    |
+| --------- | ---------------------------------- |
+| `default` | Here the content will be rendered. |
+
+### Slot Properties and Function Args 
+
+All the life cycle hooks(mounted, created etc.) and the default slot scope gets the args/props below.
+
+| **Property** | **Type**   | **Description**                     |
+| ------------ | :--------: | ----------------------------------- |
+| `state`      | `Object`   | State of the component a.k.a `data` |
+| `setState`   | `Function` | A function to set the state         |
+
 
 ## About
 
 Inspired by [@Reach/component-component](https://github.com/reach/reach-ui/).
 Thanks [Ryan](https://twitter.com/ryanflorence) 👍
 
-# Todos
+## Todos
 
 - Refs?
 
