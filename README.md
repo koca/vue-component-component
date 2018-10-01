@@ -2,7 +2,9 @@
 
 <p align="center">
 
+
 ![version](https://img.shields.io/npm/v/vue-component-component.svg)
+![size](https://img.badgesize.io/https://unpkg.com/vue-component-component/dist/VueComponent.umd.min.js?compression=gzip&label=size&colorB=000000)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/koca/vue-component-component)
 [![CircleCI branch](https://circleci.com/gh/egoist/bili/tree/master.svg?style=shield)](https://circleci.com/gh/koca/vue-component-component/tree/master)
 ![Codecov](https://img.shields.io/codecov/c/github/koca/vue-component-component.svg)
